@@ -5,22 +5,41 @@ echo "Welcome to setup!"
 echo "Installing nala"
 sudo apt install nala
 
+echo "Update? [y|n]"
+read -r yesno
+if [[ $yesno == "y" ]]; then
+	sudo nala update
+	sudo nala upgrade
+fi
+
+# Setup git and github
 echo "Installing git"
 sudo nala install git
+echo "Connect to github! [y|n]"
+read -r yesno 
+if [[ $yesno == "y" ]]; then
+	sudo nala install gh
+	gh auth login
+fi
 
+# install vim and neovim
 echo "Installing neovim and vim"
 sudo nala install neovim
 sudo nala install vim
 
-echo "Installing python3 and pip"
-sudo nala install python3
-sudo nala install python3-pip
+# install python and pip
+echo "Install python3 and pip? [y|n]"
+read -r yesno
+if [[ $yesno == "y" ]]; then	
+	echo "Installing python3 and pip"
+	sudo nala install python3
+	sudo nala install python3-pip
+fi
 
-echo "Installing node (nvm)"
-echo -n "Proceed? [y/n]: "
-read -r install_nvm
-
-if [[ $install_nvm == "y" ]]; then
+# install node for coc.nvim
+echo "Install node & nvm? [y|n]"
+read -r yesno 
+if [[ $yesno == "y" ]]; then
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -28,21 +47,14 @@ if [[ $install_nvm == "y" ]]; then
 	nvm use node
 fi
 
-echo "Connect to github!"
-echo -n "Proceed? [y/n]: "
-read -r connect_gh
-
-if [[ $connect_gh == "y" ]]; then
-	sudo nala install gh
-	gh auth login
-fi
-
+# install kitty, zsh, oh-my-zsh and pure theme
 echo "Installing kitty!"
 sudo nala install kitty
 
 echo "Installing zsh!"
 sudo nala install zsh
 chsh -s $(which zsh)
+#change default shell
 
 echo "Installing ohmyzsh!"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -56,11 +68,11 @@ echo "fpath+=($HOME/.zsh/pure)" >> $HOME/.zshrc
 echo "autoload -U promptinit; promptinit" >> $HOME/.zshrc
 echo "prompt pure" >> $HOME/.zshrc
 
-echo "Install JetBrainsMono Nerd Font?"
-echo -n "Proceed? [y/n]"
-read -r install_font
+# install JetBrainsMono Nerd Font
+echo "Install JetBrainsMono Nerd Font? [y|n]"
+read -r yesno 
 
-if [[ $install_font == "y" ]]; then
+if [[ $yesno == "y" ]]; then
 	mkdir ~/.fonts
 	wget -P ~/.fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip
 	mkdir ~/.fonts/JetBrainsMono
