@@ -28,10 +28,24 @@ if [[ $yesno == "y" ]]; then
 fi
 
 # install vim and neovim
-echo "Installing neovim and vim"
-wget -P ~/Downloads https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
-sudo nala install ~/Downloads/nvim-linux64.deb -y
-sudo nala install vim -y
+echo "Install neovim and vim? [y|n]"
+read -r yesno
+if [[ $yesno == "y" ]]; then
+	wget -P ~/Downloads https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+	sudo nala install ~/Downloads/nvim-linux64.deb -y
+	sudo nala install vim -y
+fi
+# install vim-plug for vim and neovim
+echo "Install vim-plug for vim and neovim? [y|n]"
+read -r yesno
+if [[ $yesno == "y" ]]; then
+	echo "vim-plug -> ~/.vim/autoload/"
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	echo "vim-plug -> ${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/"
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+fi
 
 # install python and pip
 echo "Install python3 and pip? [y|n]"
