@@ -29,7 +29,8 @@ fi
 
 # install vim and neovim
 echo "Installing neovim and vim"
-sudo nala install neovim -y
+wget -P ~/Downloads https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+sudo nala install ~/Downloads/nvim-linux64.deb -y
 sudo nala install vim -y
 
 # install python and pip
