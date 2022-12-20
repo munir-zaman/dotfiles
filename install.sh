@@ -99,3 +99,13 @@ if [[ $yesno == "y" ]]; then
 	mkdir ~/.fonts/JetBrainsMono
 	unzip ~/.fonts/JetBrainsMono.zip -d ~/.fonts/JetBrainsMono
 fi
+
+# install discord 
+echo "Install Discord? [y|n]"
+read -r yesno
+DISCORD_DEB="https://dl.discordapp.net/apps/linux/0.0.22/discord-0.0.22.deb"
+if [[ $yesno == "y" ]]; then
+	wget -O ~/Downloads/discord.deb $DISCORD_DEB
+	sudo nala install ~/Downloads/discord.deb
+fi
+
