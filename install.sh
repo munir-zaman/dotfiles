@@ -46,7 +46,18 @@ if [[ $yesno == "y" ]]; then
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 fi
-
+# update config from your dotfiles
+#echo "Do you want to update neovim config from your dotfiles repo? [y|n]"
+#read -r yesno
+#DOTFILES="https://github.com/munir-zaman/dotfiles"
+#if [[ $yesno == "y" ]]; then
+#	echo "Cloning your dotfiles into $HOME"
+#	cd ~
+#	git clone $DOTFILES
+#	cp ~/dotfiles/.config/nvim ~/.config -rf
+#	echo "you can also link the directories using ln -s ~/dotfiles/.config/nvim ~/.config"
+#fi
+#
 # install python and pip
 echo "Install python3 and pip? [y|n]"
 read -r yesno
