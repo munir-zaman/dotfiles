@@ -109,3 +109,11 @@ if [[ $yesno == "y" ]]; then
 	sudo nala install ~/Downloads/discord.deb
 fi
 
+# install zoom
+echo "Install Zoom? [y|n]"
+read -r yesno
+ZOOM_DEB="https://cdn.zoom.us/prod/5.13.0.599/zoom_amd64.deb"
+if [[ $yesno == "y" ]]; then
+	wget -O ~/Downloads/zoom.deb $ZOOM_DEB
+	sudo nala install ~/Downloads/zoom.deb
+fi
