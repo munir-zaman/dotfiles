@@ -31,8 +31,14 @@ fi
 echo "Install neovim and vim? [y|n]"
 read -r yesno
 if [[ $yesno == "y" ]]; then
-	wget -P ~/Downloads https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
-	sudo nala install ~/Downloads/nvim-linux64.deb -y
+
+	cd ~
+	wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim
+	chmod +x nvim
+	sudo chown root:root nvim
+	sudo mv nvim /usr/bin
+	mkdir -p .config/nvim
+
 	sudo nala install vim -y
 fi
 # install vim-plug for vim and neovim
@@ -106,7 +112,7 @@ echo "Install JetBrainsMono Nerd Font? [y|n]"
 read -r yesno 
 if [[ $yesno == "y" ]]; then
 	mkdir ~/.fonts
-	wget -P ~/.fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip
+	wget -P ~/.fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
 	mkdir ~/.fonts/JetBrainsMono
 	unzip ~/.fonts/JetBrainsMono.zip -d ~/.fonts/JetBrainsMono
 fi
