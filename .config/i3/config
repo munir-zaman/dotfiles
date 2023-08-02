@@ -58,7 +58,7 @@ exec_always nitrogen --restore
 exec_always polybar-msg cmd quit & polybar mybar --config=~/.config/polybar/config.ini
 
 # start picom on startup
-exec_always picom --config ~/.config/picom/default.conf
+exec_always picom --config ~/.config/picom/default.conf --experimental-backends
 
 # start a terminal
 bindsym $mod+Return exec kitty
