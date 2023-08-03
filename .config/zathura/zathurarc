@@ -1,5 +1,7 @@
 # zathurarc
 
+include themes/tokyonight_night.zathurarc
+
 # colors
 set statusbar-bg "#041124"
 set statusbar-fg white
@@ -25,6 +27,6 @@ map i recolor
 
 
 # transparent bg
-set default-bg rgba(0,0,0,0.7)
+set default-bg rgba(0,0,0,0.8)
 set recolor-lightcolor rgba(0,0,0,0)
 
