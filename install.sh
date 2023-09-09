@@ -20,6 +20,7 @@ sudo nala install git -y
 git config --global user.email "munir.zaman2k22@outlook.com"
 git config --global user.name "Munir Zaman"
 
+# Connect to github using `gh`
 echo "Connect to github! [y|n]"
 read -r yesno 
 if [[ $yesno == "y" ]]; then
@@ -41,6 +42,7 @@ if [[ $yesno == "y" ]]; then
 
 	sudo nala install vim -y
 fi
+
 # install vim-plug for vim and neovim
 echo "Install vim-plug for vim and neovim? [y|n]"
 read -r yesno
@@ -52,6 +54,7 @@ if [[ $yesno == "y" ]]; then
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 fi
+
 # update config from your dotfiles
 #echo "Do you want to update neovim config from your dotfiles repo? [y|n]"
 #read -r yesno
@@ -65,6 +68,7 @@ fi
 #fi
 #
 # install python and pip
+
 echo "Install python3 and pip? [y|n]"
 read -r yesno
 if [[ $yesno == "y" ]]; then	
@@ -107,16 +111,6 @@ if [[ $yesno == "y" ]]; then
 	nvm use node
 fi
 
-# install JetBrainsMono Nerd Font
-echo "Install JetBrainsMono Nerd Font? [y|n]"
-read -r yesno 
-if [[ $yesno == "y" ]]; then
-	mkdir ~/.fonts
-	wget -P ~/.fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
-	mkdir ~/.fonts/JetBrainsMono
-	unzip ~/.fonts/JetBrainsMono.zip -d ~/.fonts/JetBrainsMono
-fi
-
 # install discord 
 echo "Install Discord? [y|n]"
 read -r yesno
@@ -126,11 +120,5 @@ if [[ $yesno == "y" ]]; then
 	sudo nala install ~/Downloads/discord.deb
 fi
 
-# install zoom
-echo "Install Zoom? [y|n]"
-read -r yesno
-ZOOM_DEB="https://cdn.zoom.us/prod/5.13.0.599/zoom_amd64.deb"
-if [[ $yesno == "y" ]]; then
-	wget -O ~/Downloads/zoom.deb $ZOOM_DEB
-	sudo nala install ~/Downloads/zoom.deb
-fi
+# install code
+sudo nala install code -y
