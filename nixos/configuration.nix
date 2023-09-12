@@ -96,7 +96,7 @@
   };
   
   # xdg portal
-  xdg.portal = { enable = true; wlr.enable = true; extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gnome ]; };
+  xdg.portal = { enable = true; wlr.enable = true; extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; };
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -154,6 +154,7 @@
       # utils
       wofi # app launcher
       swww # wallpaper manager
+      waybar
       
       # languages
       racket
@@ -182,7 +183,6 @@
      xclip
      xsel
      wl-clipboard
-  #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
