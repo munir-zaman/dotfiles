@@ -158,7 +158,8 @@
       # languages
       racket
       python3
-    #  thunderbird
+      typst
+      typst-lsp
     ];
   };
 
