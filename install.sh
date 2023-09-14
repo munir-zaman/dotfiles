@@ -122,3 +122,7 @@ fi
 
 # install code
 sudo nala install code -y
+
+# install i3
+# `scripts/i3-dev.sh` installs the devlepment release of i3
+sudo scripts/i3-dev.sh

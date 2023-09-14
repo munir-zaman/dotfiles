@@ -46,7 +46,7 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+# tiling_drag modifier titlebar
 
 # start dunst on startup
 exec_always ~/.config/dunst/launch.sh
@@ -215,8 +215,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize" ; exec notify-send "󰆾 i3 resize mode enabled" -t 1000
 
-gaps inner 8px
-# gaps outer 5px
+gaps inner 5px
+gaps outer 1px
 
 #Hide window title bar
 default_border pixel 1

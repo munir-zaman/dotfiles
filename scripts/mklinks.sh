@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # refer -> https://stackoverflow.com/questions/59838/how-do-i-check-if-a-directory-exists-or-not-in-a-bash-shell-script
 
@@ -11,5 +12,5 @@ if [ -d "$NIXOS_DIR" ]; then
 fi
 
 DOT_CONFIG="$DOTFILES_DIR/.config"
-ln -sf $DOT_CONFIG/* ~/.config
+ln -snf $DOT_CONFIG/* ~/.config
 
