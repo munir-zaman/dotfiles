@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 FONT_DIR="$HOME/.fonts"
 FONT_NAME="FiraCode"
