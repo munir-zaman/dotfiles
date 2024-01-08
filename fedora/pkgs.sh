@@ -1,5 +1,16 @@
 #!/bin/sh
 
+# have to look into this
+function asktoproceed() {
+	echo -n "Proceed? [y/n]: "
+	read -r ans
+	if [[ "$ans" == "n" ]]; then
+		return 1
+	else
+		return 0
+	fi
+}
+
 # set up git and github
 echo "SETTING UP GIT AND GITHUB"
 sudo dnf5 install git gh
@@ -21,7 +32,6 @@ sudo dnf5 install gcc-c++
 
 # fonts
 function installfonts() {
-	echo "INSTALLING NERD-FONTS"
 	FONT_DIR="$HOME/.fonts"
 	for FONT_NAME in "$@"; do
 		echo "INSTALLING $FONT_NAME"
@@ -33,4 +43,7 @@ function installfonts() {
 }
 
 # see (https://github.com/ryanoasis/nerd-fonts/releases) for more fonts
-installfonts "FiraCode" "JetBrainsMono"
+echo "INSTALLING NERD-FONTS"
+if asktoproceed; then
+	installfonts "FiraCode" "JetBrainsMono"
+fi
