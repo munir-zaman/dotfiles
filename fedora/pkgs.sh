@@ -16,15 +16,21 @@ sudo dnf install lazygit
 # vim and neovim
 sudo dnf5 install vim neovim
 
+# g++
+sudo dnf5 install gcc-c++
+
 # fonts
-echo "INSTALLING NERD-FONTS"
-FONT_DIR="$HOME/.fonts"
+function installfonts() {
+	echo "INSTALLING NERD-FONTS"
+	FONT_DIR="$HOME/.fonts"
+	for FONT_NAME in "$@"; do
+		echo "INSTALLING $FONT_NAME"
+		# intsall font in FONT_DIR
+		curl --create-dirs --output-dir "$FONT_DIR/$FONT_NAME" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$FONT_NAME.tar.xz
+		# unzip tar 
+		tar -xvf "$FONT_DIR/$FONT_NAME/$FONT_NAME.tar.xz" -C "$FONT_DIR/$FONT_NAME"
+	done
+}
+
 # see (https://github.com/ryanoasis/nerd-fonts/releases) for more fonts
-FONTS=("FiraCode" "JetBrainsMono")
-for FONT_NAME in "${FONTS[@]}"; do
-	echo "INSTALLING $FONT_NAME"
-	# intsall font in FONT_DIR
-	curl --create-dirs --output-dir "$FONT_DIR/$FONT_NAME" -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$FONT_NAME.tar.xz
-	# unzip tar 
-	tar -xvf "$FONT_DIR/$FONT_NAME/$FONT_NAME.tar.xz" -C "$FONT_DIR/$FONT_NAME"
-done
+installfonts "FiraCode" "JetBrainsMono"
