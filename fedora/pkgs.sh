@@ -69,6 +69,9 @@ sudo dnf5 install discord
 # install spotify
 sudo flatpak install spotify -y
 
+# install nitrogen
+sudo dnf5 install nitrogen
+
 # install swayfx
 sudo dnf copr enable swayfx/swayfx
 sudo dnf5 install swayfx
