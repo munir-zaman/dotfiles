@@ -27,6 +27,9 @@ sudo dnf install lazygit
 # vim and neovim
 sudo dnf5 install vim neovim
 
+# kitty
+sudo dnf5 install kitty
+
 # g++
 sudo dnf5 install gcc-c++
 
@@ -44,12 +47,15 @@ function installfonts() {
 
 # see (https://github.com/ryanoasis/nerd-fonts/releases) for more fonts
 echo "INSTALLING NERD-FONTS"
+# installfonts "FiraCode" "JetBrainsMono"
 if asktoproceed; then
-	installfonts "FiraCode" "JetBrainsMono"
+  installfonts "FiraCode" "JetBrainsMono"
 fi
+
 
 # install lazy-nvim
 echo "INSTALLING LAZY-NVIM"
+sudo dnf5 install fd-find ripgrep
 mv ~/.config/nvim{,.bak}
 mv ~/.local/share/nvim{,.bak}
 mv ~/.local/state/nvim{,.bak}
