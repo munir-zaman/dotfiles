@@ -55,7 +55,7 @@ fi
 
 # install lazy-nvim
 echo "INSTALLING LAZY-NVIM"
-sudo dnf5 install fd-find ripgrep
+sudo dnf5 install fd-find ripgrep npm
 mv ~/.config/nvim{,.bak}
 mv ~/.local/share/nvim{,.bak}
 mv ~/.local/state/nvim{,.bak}
