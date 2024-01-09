@@ -68,3 +68,7 @@ sudo dnf5 install discord
 
 # install spotify
 sudo flatpak install spotify -y
+
+# install swayfx
+sudo dnf copr enable swayfx/swayfx
+sudo dnf5 install swayfx
