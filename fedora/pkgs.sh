@@ -72,3 +72,6 @@ sudo flatpak install spotify -y
 # install swayfx
 sudo dnf copr enable swayfx/swayfx
 sudo dnf5 install swayfx
+
+# install i3
+sudo dnf5 install i3
