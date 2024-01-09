@@ -63,3 +63,9 @@ mv ~/.cache/nvim{,.bak}
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
+# install discord
+sudo dnf5 install discord
+
+# install spotify
+sudo dnf5 install lpf-spotify-client
+
