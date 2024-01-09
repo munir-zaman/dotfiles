@@ -67,5 +67,4 @@ rm -rf ~/.config/nvim/.git
 sudo dnf5 install discord
 
 # install spotify
-sudo dnf5 install lpf-spotify-client
-lpf update
+sudo flatpak install spotify -y
