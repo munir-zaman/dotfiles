@@ -68,4 +68,4 @@ sudo dnf5 install discord
 
 # install spotify
 sudo dnf5 install lpf-spotify-client
-
+lpf update
