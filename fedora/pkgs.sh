@@ -78,3 +78,6 @@ sudo dnf5 install swayfx
 
 # install i3
 sudo dnf5 install i3
+
+# install gnome-tweaks
+sudo dnf5 install gnome-tweaks
