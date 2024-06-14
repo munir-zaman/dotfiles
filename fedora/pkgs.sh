@@ -52,32 +52,10 @@ if asktoproceed; then
   installfonts "FiraCode" "JetBrainsMono"
 fi
 
-
-# install lazy-nvim
-echo "INSTALLING LAZY-NVIM"
 sudo dnf5 install fd-find ripgrep npm
-mv ~/.config/nvim{,.bak}
-mv ~/.local/share/nvim{,.bak}
-mv ~/.local/state/nvim{,.bak}
-mv ~/.cache/nvim{,.bak}
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
-
-# install discord
-sudo dnf5 install discord
-
-# install spotify
-sudo flatpak install spotify -y
 
 # install nitrogen
 sudo dnf5 install nitrogen
 
-# install swayfx
-sudo dnf copr enable swayfx/swayfx
-sudo dnf5 install swayfx
-
 # install i3
 sudo dnf5 install i3
-
-# install gnome-tweaks
-sudo dnf5 install gnome-tweaks

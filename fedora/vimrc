@@ -1,0 +1,20 @@
+syntax on
+set re=1
+
+set encoding=utf-8
+set splitbelow
+set relativenumber
+set spl=en spell
+set ruler
+set smartindent
+set cursorline
+"set cursorcolumn
+set splitright
+
+set bs=2
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+colorscheme habamax
