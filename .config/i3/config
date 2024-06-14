@@ -49,16 +49,16 @@ floating_modifier $mod
 # tiling_drag modifier titlebar
 
 # start dunst on startup
-exec_always ~/.config/dunst/launch.sh
+# exec_always ~/.config/dunst/launch.sh
 
 # start nitrogen on startup
 exec_always nitrogen --restore
 
 # start polybar on startup
-exec_always polybar-msg cmd quit & polybar mybar --config=~/.config/polybar/config.ini
+# exec_always polybar-msg cmd quit & polybar mybar --config=~/.config/polybar/config.ini
 
 # start picom on startup
-exec_always picom --config ~/.config/picom/default.conf --experimental-backends
+# exec_always picom --config ~/.config/picom/default.conf --experimental-backends
 
 # start a terminal
 bindsym $mod+Return exec kitty

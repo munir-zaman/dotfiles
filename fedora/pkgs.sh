@@ -58,4 +58,4 @@ sudo dnf5 install fd-find ripgrep npm
 sudo dnf5 install nitrogen
 
 # install i3
-sudo dnf5 install i3
+sudo dnf5 install i3 rofi polybar maim
