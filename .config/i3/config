@@ -52,9 +52,9 @@ floating_modifier $mod
 # exec_always ~/.config/dunst/launch.sh
 
 # start nitrogen on startup
-# exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 # use wal instead of nitrogen
-exec_always --no-startup-id wal -R
+# exec_always --no-startup-id wal -R
 
 # start polybar on startup
 exec_always --no-startup-id polybar-msg cmd quit & polybar mybar --config=~/.config/polybar/config.ini

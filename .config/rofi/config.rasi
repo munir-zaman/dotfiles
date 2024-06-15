@@ -1,1 +1,13 @@
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+configuration {
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   "";
+    display-window: "";
+    display-combi:  "";
+    show-icons:     true;
+    font: "JetBrainsMono NF 12";
+    terminal: "kitty";
+    matching: "fuzzy";
+}
+
+@theme "~/.config/rofi/black-metal.rasi"

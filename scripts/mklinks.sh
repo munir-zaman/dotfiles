@@ -2,7 +2,7 @@
 
 # refer -> https://stackoverflow.com/questions/59838/how-do-i-check-if-a-directory-exists-or-not-in-a-bash-shell-script
 
-DOTFILES_DIR="$HOME/Desktop/dotfiles"
+DOTFILES_DIR="$HOME/git-repos/dotfiles"
 NIXOS_DIR="$DOTFILES_DIR/nixos"
 
 if [ -d "$NIXOS_DIR" ]; then
