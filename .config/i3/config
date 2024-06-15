@@ -52,10 +52,10 @@ floating_modifier $mod
 # exec_always ~/.config/dunst/launch.sh
 
 # start nitrogen on startup
-exec_always nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 
 # start polybar on startup
-# exec_always polybar-msg cmd quit & polybar mybar --config=~/.config/polybar/config.ini
+exec_always --no-startup-id polybar-msg cmd quit & polybar mybar --config=~/.config/polybar/config.ini
 
 # start picom on startup
 # exec_always picom --config ~/.config/picom/default.conf --experimental-backends
