@@ -61,7 +61,9 @@ exec_always --no-startup-id polybar-msg cmd quit & polybar mybar --config=~/.con
 
 # start picom on startup
 # exec_always picom --config ~/.config/picom/default.conf --experimental-backends
-exec_always --no-startup-id  picom -b --backend glx --blur-method dual_kawase --vsync
+# exec_always --no-startup-id  picom -b --backend glx --blur-method dual_kawase --vsync
+# exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom -b
 
 # start a terminal
 bindsym $mod+Return exec kitty
