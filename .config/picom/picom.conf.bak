@@ -1,0 +1,62 @@
+# REF : https://wiki.archlinux.org/title/Picom
+# Firefox bug fix : https://www.reddit.com/r/qtile/comments/yey1cn/comment/iu1n6hi/
+
+menu          = { shadow = false; blur-background = false;};
+dropdown_menu = { shadow = false; blur-background = false;};
+popup_menu    = { shadow = false; blur-background = false;};
+utility       = { shadow = false; blur-background = false;};
+
+shadow-exclude = [
+    "! name~=''",
+    "_GTK_FRAME_EXTENTS@:c",
+    "name = 'Notification'",
+    "name = 'Plank'",
+    "name = 'Docky'",
+    "name = 'Kupfer'",
+    "name = 'xfce4-notifyd'",
+    "name *= 'VLC'",
+    "name *= 'compton'",
+    "name *= 'picom'",
+    "name *= 'Chromium'",
+    "name *= 'Chrome'",
+    "class_g = 'firefox' && argb && override_redirect = true",
+    "class_g = 'Conky'",
+    "class_g = 'Kupfer'",
+    "class_g = 'Synapse'",
+    "class_g ?= 'Notify-osd'",
+    "class_g ?= 'Cairo-dock'",
+    "class_g ?= 'Xfce4-notifyd'",
+    "class_g ?= 'Xfce4-power-manager'",
+    "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+];
+
+opacity-rule = [
+  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
+  "0:_NET_WM_STATE@[0]:32a *= '_NET_WM_STATE_HIDDEN'",
+  "0:_NET_WM_STATE@[1]:32a *= '_NET_WM_STATE_HIDDEN'",
+  "0:_NET_WM_STATE@[2]:32a *= '_NET_WM_STATE_HIDDEN'",
+  "0:_NET_WM_STATE@[3]:32a *= '_NET_WM_STATE_HIDDEN'",
+  "0:_NET_WM_STATE@[4]:32a *= '_NET_WM_STATE_HIDDEN'"
+];
+
+blur-background-exclude = [
+    "class_g = 'firefox' && argb && override_redirect = true",
+];
+
+# FADING
+fading = true;
+fade-in-step = 0.3;
+fade-out-step = 0.3;
+
+# OTHERS
+vsync = true;
+backend = "glx";
+
+wintypes:
+{
+  tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; full-shadow = false; };
+  dock = { shadow = false; clip-shadow-above = true; }
+  dnd = { shadow = false; }
+  popup_menu = { opacity = 1.0; shadow = false; blur-background = false; }
+  dropdown_menu = { opacity = 1.0; shadow = false; blur-background = false; }
+};
