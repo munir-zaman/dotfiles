@@ -74,7 +74,7 @@ bindsym $mod+q kill
 # rofi binds
 # bindsym $mod+d exec --no-startup-id rofi -show run
 # bindsym $mod+Tab exec --no-startup-id rofi -show window
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launcher.sh
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
 
 # A more modern dmenu replacement is rofi:
