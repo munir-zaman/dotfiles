@@ -21,7 +21,7 @@ echo "fastestmirror=True"			>> $dnfpath
 echo "max_parallel_downloads=10"		>> $dnfpath
 echo "minrate=50000"				>> $dnfpath
 
-systemctl enable --now dnf-makecache.timer
+systemctl enable --now dnf5-makecache.timer
 
 cat $dnfpath
 dnf install dnf5
