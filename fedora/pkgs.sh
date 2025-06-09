@@ -13,7 +13,7 @@ function asktoproceed() {
 
 # set up git and github
 echo "SETTING UP GIT AND GITHUB"
-sudo dnf5 install git gh
+sudo dnf install git gh
 gh auth login
 
 git config --global user.email "munir.zaman2k22@outlook.com"
@@ -25,13 +25,13 @@ sudo dnf copr enable atim/lazygit -y
 sudo dnf install lazygit
 
 # vim and neovim
-sudo dnf5 install vim neovim
+sudo dnf install vim neovim
 
 # kitty
-sudo dnf5 install kitty
+sudo dnf install kitty
 
 # g++
-sudo dnf5 install gcc-c++
+sudo dnf install gcc-c++
 
 # fonts
 function installfonts() {
@@ -52,13 +52,13 @@ if asktoproceed; then
   installfonts "FiraCode" "JetBrainsMono"
 fi
 
-sudo dnf5 install fd-find ripgrep npm
+sudo dnf install fd-find ripgrep npm
 
 # install nitrogen
-sudo dnf5 install nitrogen
+sudo dnf install nitrogen
 
 # install i3
-sudo dnf5 install i3 rofi polybar maim picom
+sudo dnf install i3 rofi polybar maim picom
 
 # install zathura
-sudo dnf5 install zathura zathura-mupdf
+sudo dnf install zathura zathura-mupdf
